@@ -1,3 +1,9 @@
+# HPDIC MOD
+
+* Quick start
+    * `pip install pycrypto`
+    * `./test/check.py`
+
 # POPE
 
 Implementation of "Partial Order Preserving Encryption"

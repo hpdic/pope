@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+#
+# Modified by dzhao@uw.edu, 1/12/2023
+#
+
 import sys
 import random
 import itertools
@@ -46,7 +50,8 @@ if __name__ == '__main__':
                 return s[1:]
 
         #cl = client.Client(mem=5, key='e', cipher=EC)
-        crypt = DumbCipher('enkey')
+        # crypt = DumbCipher('enkey')
+        crypt = AES('enkey')
         cl = OpeClient(algo(Oracle(crypt, 5)), crypt)
 
         for s in ins:
@@ -77,6 +82,12 @@ if __name__ == '__main__':
         ############## big demo here
         # print("=== BIG DEMO START ===")
 
+        #
+        # DFZ: The following is just a test for longer text
+        #
+
+        '''
+        
         wordsfn = './test_data.txt'
 
         with open(wordsfn, 'r') as words:
@@ -141,6 +152,8 @@ if __name__ == '__main__':
         # print("Tree structure:")
         cl._serv.check(info=True)
         # print()
+
+        '''
 
         print("All checks passed!")
         print()
